@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Begin from '@/components/Begin'
 import Login from '@/components/Auth/Login'
 import Registration from '@/components/Auth/Registration'
+import Play from '@/components/PlayTable'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/registration',
       name: 'Registration',
       component: Registration
-    }
+    },
+    {
+      path: '/play',
+      name: 'Play',
+      component: Play
+    }    
   ]
 })
