@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid background">
       <div class="row money">
-        <p class="text-center">Place your bet, please <strong id="user">Sasha</strong></p>
+        <p class="text-center">Please bet <br><strong id="user">Sasha</strong></p>
         <div class="bet">
           <label class="text-uppercase">Bet :</label>
           <p class="text-center" id="bet">100</p>
@@ -27,7 +27,7 @@
           <li class="red" onclick="createFishka200()">200</li>
         </ul>
       </div>
-      <div class="row play col-md-6 col-md-offset-5"> 
+      <div class="row play col-md-12 text-center"> 
           <button type="button" class="btn btn-success" id="game" onclick="play();">Play</button>
           <button type="button" class="btn btn-success" onclick="enough()">Enough</button>
           <button type="button" class="btn btn-success" onclick="more()">More</button>
@@ -37,7 +37,10 @@
 
 <script>
 export default {
-  
+  beforeCreate() {
+    console.log(this.$store.getters.getUser);
+		return;
+	},
 }
 </script>
 

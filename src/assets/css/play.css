@@ -17,8 +17,8 @@
 	position: absolute;
 	background-color: #E9C85F;
 	padding: 5px;
-	width: 230px;
-	height: 150px;
+	width: 270px;
+	height: 180px;
 	border-radius: 5px;
 	top: 70px;
 	font-size: 1.35em;
@@ -33,6 +33,7 @@
 }
 .bet>label{
 	float: left;
+	line-height: 32px;
 }
 .bet>p{
 	background-color: black;
@@ -41,7 +42,7 @@
 	border-radius: 5px;
 	float: right;
 	width: 70%;
-	height: 25px;
+	height: 32px;
 }
 
 .cash{
@@ -51,6 +52,7 @@
 .cash>label{
 	margin-top: 5px;
 	float: left;
+	line-height: 32px;
 }
 .cash>p{
 	background-color: black;
@@ -59,7 +61,7 @@
 	border-radius: 5px;
 	float: right;
 	width: 70%;
-	height: 25px;
+	height: 32px;
 	margin-top: 5px;
 }
 
@@ -76,9 +78,9 @@
 	display: inline;
 	float: left;
 	margin-right: 5px;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
 	border-radius: 50%;	
 	font-size: 1.1em;
 	font-weight: 600;
@@ -87,12 +89,15 @@
 }
 .red{
 	background: url(../images/fishka1.png) no-repeat center;
+	background-size: 100% 100%;
 }
 .blue{
 	background: url(../images/fishkablue.png) no-repeat center;
+	background-size: 100% 100%;
 }
 .yellow{
 	background: url(../images/fishkayellow.png) no-repeat center;
+	background-size: 100% 100%;
 }
 .play{
 	position: absolute;
