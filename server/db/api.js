@@ -15,15 +15,8 @@ exports.createUser = function(userData){
 		password: hash(userData.password)
 	}
 
-	console.log(user);
-	
 	return new User(user).save()
 		.then((doc)=>{
-			// function(err){
-				// mongoose.disconnect();
-				console.log("User create");
-				// if(err) return console.log(err);
-			// }
 			return doc;
 		})
 		.catch(()=> {return false});
@@ -36,7 +29,6 @@ exports.checkUser = function(userData) {
 		.then((doc)=>{
 			if(doc){
 				if ( doc.password == hash(userData.password) ){
-					console.log("User password is ok");
 					return Promise.resolve(doc);
 				} else {
 					return false; 
@@ -49,20 +41,20 @@ exports.checkUser = function(userData) {
 		});
 }
 
-exports.checkUserId = function(userId) { 
-	return User
-		.findOne({"_id": new objectId(userId)})
-		.then(function(doc){
-			if (doc){
-				return Promise.resolve(doc);
-			} else {
-				return false; 
-			}
-		})
-}
+// exports.checkUserId = function(userId) { 
+// 	return User
+// 		.findOne({"_id": new objectId(userId)})
+// 		.then(function(doc){
+// 			if (doc){
+// 				return Promise.resolve(doc);
+// 			} else {
+// 				return false; 
+// 			}
+// 		})
+// }
 
 exports.updateUser = function(data){
-	return User.findOneAndUpdate({"_id": new objectId(data.userUpdate)}, {bet: data.cash}, (err, result)=>{
+	return User.findOneAndUpdate({"_id": new objectId(data.id)}, {bet: data.cash}, (err, result)=>{
 		if (err) throw err;
 		console.log(result);
 	});

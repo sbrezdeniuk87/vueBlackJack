@@ -6,6 +6,7 @@ import store from './store'
 
 Vue.config.productionTip = false
 Vue.use(VeeValidate)
+window.Vue = Vue;
 
 /* eslint-disable no-new */
 new Vue({

@@ -27,15 +27,15 @@
 	margin-left: 5px;
 }
 
-.bet{
+.cash{
 	width: 100%;
 	margin: 10px 0;
 }
-.bet>label{
+.cash>label{
 	float: left;
 	line-height: 32px;
 }
-.bet>p{
+.cash>p{
 	background-color: black;
 	color: white;
 	border: 1px solid #fff;
@@ -45,16 +45,16 @@
 	height: 32px;
 }
 
-.cash{
+.bet{
 	width: 100%;
 	margin: 45px 0 0 0;
 }
-.cash>label{
-	margin-top: 5px;
+.bet>label{
+	margin-top: 14px;
 	float: left;
 	line-height: 32px;
 }
-.cash>p{
+.bet>p{
 	background-color: black;
 	color: white;
 	border: 1px solid #fff;
@@ -74,7 +74,7 @@
 	left: 0;
 }
 
-.fishka ul li{
+.fishka ul li button{
 	display: inline;
 	float: left;
 	margin-right: 5px;
@@ -84,7 +84,8 @@
 	border-radius: 50%;	
 	font-size: 1.1em;
 	font-weight: 600;
-	cursor: pointer;
+	border: none;
+	outline: none;
 	color: black;
 }
 .red{
@@ -121,9 +122,9 @@
 /*//////// BET fishk /////*/
 .blue1{
 	position: absolute;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
 	border-radius: 50%;	
 	font-size: 1.1em;
 	font-weight: 600;
@@ -132,6 +133,7 @@
 	left: 46%; 
   	bottom: 58%;
 	background: url(../images/fishkablue.png) no-repeat center;
+	background-size: 100% 100%;
 	z-index: 4;
 	animation: fishk_1 0.5s linear;
 }
@@ -145,9 +147,9 @@
 	}
 .blue5{
 	position: absolute;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
 	border-radius: 50%;	
 	font-size: 1.1em;
 	font-weight: 600;
@@ -156,6 +158,7 @@
 	left: 47%; 
   	bottom: 58%;
 	background: url(../images/fishkablue.png) no-repeat center;
+	background-size: 100% 100%;
 	z-index: 5;
 	animation: fishk_5 0.5s linear;
 }
@@ -170,9 +173,9 @@
 
 .yellow25{
 	position: absolute;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
 	border-radius: 50%;	
 	font-size: 1.1em;
 	font-weight: 600;
@@ -181,6 +184,7 @@
 	left: 48%; 
   	bottom: 58.5%;
 	background: url(../images/fishkayellow.png) no-repeat center;
+	background-size: 100% 100%;
 	z-index: 6;
 	animation: fishk_25 0.5s linear;
 }
@@ -195,9 +199,9 @@
 
 .yellow50{
 	position: absolute;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
 	border-radius: 50%;	
 	font-size: 1.1em;
 	font-weight: 600;
@@ -206,6 +210,7 @@
 	left: 49%; 
   	bottom: 59%;
 	background: url(../images/fishkayellow.png) no-repeat center;
+	background-size: 100% 100%;
 	z-index: 7;
 	animation: fishk_50 0.5s linear;
 }
@@ -219,9 +224,9 @@
 	}
 .red100{
 	position: absolute;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
 	border-radius: 50%;	
 	font-size: 1.1em;
 	font-weight: 600;
@@ -230,6 +235,7 @@
 	left: 50%; 
   	bottom: 58.5%;
 	background: url(../images/fishka1.png) no-repeat center;
+	background-size: 100% 100%;
 	z-index: 8;
 	animation: fishk_100 0.5s linear;
 }
@@ -244,9 +250,9 @@
 
 .red200{
 	position: absolute;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
 	border-radius: 50%;	
 	font-size: 1.1em;
 	font-weight: 600;
@@ -255,6 +261,7 @@
 	left: 51%; 
   	bottom: 58%;
 	background: url(../images/fishka1.png) no-repeat center;
+	background-size: 100% 100%;
 	z-index: 9;
 	animation: fishk_200 0.5s linear;
 }
@@ -284,6 +291,7 @@
 	float: left;
 	width: 23px;
 	height: 20px;
+	line-height: 23px;
 	margin-right: 3px;
 	color: #000;
 	background-color: #fff;
@@ -291,10 +299,10 @@
 	font-weight: 600;
 }
 
-.handD > img{
+.imgHandler{
 	float: left;
-	width: 100px;
-	height: 150px;
+	width: 125px;
+	height: 175px;
 	font-size: 1.1em;
 	font-weight: 600;
 	left: 100%;
@@ -305,8 +313,6 @@
 	position: absolute;
 	bottom: 200px;
 	height: 150px;
-	/*width: 220px;*/
-	/*background-color: #fff;*/
 	padding: 0;
 }
 
@@ -314,6 +320,7 @@
 	float: left;
 	width: 23px;
 	height: 20px;
+	line-height: 23px;
 	margin-right: 3px;
 	color: #000;
 	background-color: #fff;
@@ -321,10 +328,10 @@
 	font-weight: 600;
 }
 
-.handP > img{
+.imgPlayer{
 	float: left;
-	width: 100px;
-	height: 150px;
+	width: 125px;
+	height: 175px;
 	font-size: 1.1em;
 	font-weight: 600;
 	left: 100%;

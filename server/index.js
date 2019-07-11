@@ -18,7 +18,7 @@ app.post('/login',(req ,res)=>{
   
   api.checkUser(dataUser)
     .then((doc)=>{
-      res.send(doc._id);								
+      res.send(doc);								
     })
     .catch((error)=>{
               console.log(error);
@@ -30,10 +30,9 @@ app.post('/login',(req ,res)=>{
 
 app.post('/registration', (req, res)=> {  
   if(!req.body) return res.sendStatus(400);
-    console.log('Registration',req.body);
+  
     let dataUser = req.body;
-    console.log('Registration',dataUser);
-    
+        
     api.createUser(dataUser)
               .then((result)=>{
                   res.json(result);
@@ -42,6 +41,25 @@ app.post('/registration', (req, res)=> {
                   console.log(err);
                   res.sendStatus(400, error);                    
               });    
+});
+
+app.put('/playUser', (req, res)=> {  
+  if(!req.body) return res.sendStatus(400);
+
+  let dataUpdate = req.body;
+  api.updateUser(dataUpdate)
+    .then((doc)=>{
+      if(doc){
+        res.send(doc);				
+      } else {
+        res.json(dataUser.email);										
+      }
+    })
+    .catch((error)=>{
+              console.log(error);
+      res.sendStatus(400, error);			
+    });  
+  
 });
 
 app.listen(3000, ()=>{
