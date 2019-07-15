@@ -44,7 +44,7 @@ export default {
             .then(() => {
               this.$router.push('/play')
             })
-            .catch(() => {})
+            .catch((err) => {console.log(err)})
           return
         }
         alert('Correct them errors!');

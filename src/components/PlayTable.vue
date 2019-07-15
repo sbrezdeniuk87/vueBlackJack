@@ -261,6 +261,14 @@ export default {
     this.name = user.name;
     this.cash = user.bet;
     this.id = user.id;
+  },  
+  beforeRouteLeave (to, from, next) {
+    if(confirm('Are you sure you want to leave?')){
+      this.$store.commit('clearUser');
+      next();
+    }else{
+      next(false);
+    }
   },
   computed: {
     card () {

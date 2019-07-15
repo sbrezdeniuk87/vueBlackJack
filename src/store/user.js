@@ -17,6 +17,14 @@ export default {
         bet: payload.bet,
         email: payload.email 
       }      
+    },
+    clearUser (state) {
+      state.user = {
+        id: null,
+        name: null,
+        bet: null,
+        email: null 
+      }
     }
   },
   actions: {
@@ -29,9 +37,15 @@ export default {
       }      
     },
     async loginUser ({commit}, payload) {
+      
       try {
         const response = await axios.post('http://localhost:3000/login', payload);
-        commit('setUser', response.data);
+        if(response.data !=false){
+          commit('setUser', response.data);         
+        }else{
+          alert('Please, check email and password');
+        }
+            
       } catch (error) {
         alert(err);
       }

@@ -15,7 +15,6 @@ app.post('/login',(req ,res)=>{
   if(!req.body) return res.sendStatus(400);
     
   let dataUser = req.body;
-  
   api.checkUser(dataUser)
     .then((doc)=>{
       res.send(doc);								
