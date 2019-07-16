@@ -41,18 +41,6 @@ exports.checkUser = function(userData) {
 		});
 }
 
-// exports.checkUserId = function(userId) { 
-// 	return User
-// 		.findOne({"_id": new objectId(userId)})
-// 		.then(function(doc){
-// 			if (doc){
-// 				return Promise.resolve(doc);
-// 			} else {
-// 				return false; 
-// 			}
-// 		})
-// }
-
 exports.updateUser = function(data){
 	return User.findOneAndUpdate({"_id": new objectId(data.id)}, {bet: data.cash}, (err, result)=>{
 		if (err) throw err;

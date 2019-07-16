@@ -37,7 +37,7 @@ app.post('/registration', (req, res)=> {
                   res.json(result);
               })
               .catch((err)=>{
-                  console.log(err);
+                  console.log('registration',err);
                   res.sendStatus(400, error);                    
               });    
 });

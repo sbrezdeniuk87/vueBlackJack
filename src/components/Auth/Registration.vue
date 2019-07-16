@@ -27,8 +27,8 @@
             <span class="alert-danger" >{{ errors.first('passwordAgain') }}</span>
           </div>
           <div class="text-center">
-            <router-link :to="'/'"><button type="submit" class="btn btn-primary">Back</button></router-link>          
             <button type="submit" class="btn btn-primary">Submit</button>
+            <router-link :to="'/'"><button type="submit" class="btn btn-primary">Back</button></router-link>           
           </div>
         </form>        
       </div>  
@@ -53,11 +53,17 @@ export default {
             email: this.email,
             password: this.password
           }
+          
           this.$store.dispatch('createUser', user)
-            .then(() => {
-              this.$router.push('/play')
+            .then((doc) => {
+              if(doc != false){
+                this.$router.push('/login')
+              }else{
+                alert('User already created')
+              }
+              
             })
-            .catch(() => {})
+            .catch(() => {alert('User already created')})
           return
         }
         alert('Correct them errors!');

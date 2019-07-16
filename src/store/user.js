@@ -31,7 +31,11 @@ export default {
     async createUser ({commit}, payload) {
       try{
         const response = await axios.post('http://localhost:3000/registration', payload);
-        commit('setUser', response.data);
+        if(response.data != false){
+          commit('setUser', response.data);
+        }else{
+          return false;
+        }
       }catch(err){
         alert(err);
       }      
@@ -40,6 +44,7 @@ export default {
       
       try {
         const response = await axios.post('http://localhost:3000/login', payload);
+       
         if(response.data !=false){
           commit('setUser', response.data);         
         }else{
