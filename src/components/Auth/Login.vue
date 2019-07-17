@@ -16,8 +16,8 @@
             <input v-model="password" v-validate="'required|min:6'" name='password' type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             <span class="alert-danger" >{{ errors.first('password') }}</span>
           </div>
-          <button type="submit" class="btn btn-primary">Sing In</button>
-          <router-link :to="'/'"><button type="submit" class="btn btn-primary">Back</button></router-link>          
+          <button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'sign-in-alt']"/> Sing In</button>
+          <router-link :to="'/'"><button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'arrow-circle-left']"/> Back</button></router-link>
         </form>        
       </div>  
     </div>   

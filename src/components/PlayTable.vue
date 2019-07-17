@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid background">
       <div class="row money">
-        <p class="text-center">Please bet, <br><strong >{{name}}</strong></p>
+        <p class="text-center">Please bet, <br><strong ><font-awesome-icon  :icon="['fas', 'user']"/> {{name}}</strong></p>
         <div class="cash">
           <label class="text-uppercase">Cash :</label>
           <p class="text-center">{{cash}}</p>

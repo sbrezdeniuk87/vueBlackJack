@@ -27,8 +27,8 @@
             <span class="alert-danger" >{{ errors.first('passwordAgain') }}</span>
           </div>
           <div class="text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <router-link :to="'/'"><button type="submit" class="btn btn-primary">Back</button></router-link>           
+            <button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'clipboard']"/>  Record</button>
+            <router-link :to="'/'"><button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'arrow-circle-left']"/> Back</button></router-link>           
           </div>
         </form>        
       </div>  
