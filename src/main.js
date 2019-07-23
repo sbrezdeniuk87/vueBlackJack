@@ -6,6 +6,8 @@ import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import GSignInButton from 'vue-google-signin-button'
+
 
 library.add(fas)
 
@@ -13,6 +15,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 Vue.use(VeeValidate)
+Vue.use(GSignInButton)
 window.Vue = Vue;
 
 /* eslint-disable no-new */

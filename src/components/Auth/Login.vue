@@ -19,11 +19,16 @@
           <button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'sign-in-alt']"/> Sing In</button>
           <router-link :to="'/'"><button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'arrow-circle-left']"/> Back</button></router-link>
         </form>        
-      </div>  
+      </div> 
+      <div class="text-center">
+        <auth-google></auth-google> 
+      </div>      
     </div>   
 </template>
 
 <script>
+import AuthGoogle from './GoogleAuth'
+
 export default {
   data () {
     return {
@@ -31,6 +36,9 @@ export default {
       password: '',
       valid: false
     }
+  },
+  components: {
+    'auth-google': AuthGoogle
   },
   methods:{
     checkLogin(e){
