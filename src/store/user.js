@@ -45,10 +45,12 @@ export default {
       try {
         const response = await axios.post('http://localhost:3000/login', payload);
        
-        if(response.data !=false){
-          commit('setUser', response.data);         
+        if(response.data != false){
+          commit('setUser', response.data);
+          return true;         
         }else{
           alert('Please, check email and password');
+          return false;
         }
             
       } catch (error) {

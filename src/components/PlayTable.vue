@@ -44,7 +44,7 @@
           <li>
             <button type="button" class="yellow" :disabled="isDib" @click="onCreateDibHandler(50, 'yellow50')">50</button>
           </li>
-          <li class="red" :disabled="isDib" @click="onCreateDibHandler(100, 'red100')">
+          <li>
             <button type="button" class="red" :disabled="isDib" @click="onCreateDibHandler(100, 'red100')">100</button>
           </li>
           <li>
@@ -96,6 +96,7 @@ export default {
   },
   methods:{
     onCreateDibHandler (number, addClass) {
+      if(this.cash > 0){
         this.bet += number;
         this.cash -=number;
         const dib = {
@@ -103,7 +104,12 @@ export default {
           addClass
         };
         this.dibs.push(dib); 
-        this.isPlay = true;         
+        this.isPlay = true;    
+      }else{
+        this.showModal = true;
+        this.massege =  'You need to refill your account';
+      }
+             
     },
     async play () {
       this.isShow = true;
@@ -126,7 +132,6 @@ export default {
                 this.dibs = [];  
                 this.showModal = true;
                 this.massege =  'You have BlackJack!!!!!!!!!!!!!';
-                // alert('You have BlackJack!!!!!!!!!!!!!'); 
                 const payload = {
                   id: this.id,
                   cash: this.cash
@@ -145,7 +150,6 @@ export default {
                 this.dibs = [];
                 this.showModal = true;
                 this.massege =  'You lose!!!!!!!!!!!!!';
-                // alert('Вы проиграли!!!!!!!');
                 const payload = {
                   id: this.id,
                   cash: this.cash
@@ -168,8 +172,7 @@ export default {
                 this.isDib = false;
                 this.dibs = []; 
                 this.showModal = true;
-                this.massege =  'You have BlackJack!!!!!!!!!!!!!';       
-                // alert('У Вас BlackJack!!!!!!!!!!!!!');
+                this.massege =  'You have BlackJack!!!!!!!!!!!!!';
                 const payload = {
                   id: this.id,
                   cash: this.cash
@@ -187,8 +190,7 @@ export default {
                 this.isDib = false;
                 this.dibs = []; 
                 this.showModal = true;
-                this.massege =  'You lose!!!!!!!!!!!!!';       
-                // alert('Вы проиграли!!!!!!!');
+                this.massege =  'You lose!!!!!!!!!!!!!';
                 const payload = {
                   id: this.id,
                   cash: this.cash
@@ -211,8 +213,7 @@ export default {
                 this.isDib = false;
                 this.dibs = [];
                 this.showModal = true;
-                this.massege =  'Diler has BlackJack, You lose!!!!!!!!!!!!!';                
-                // alert('У дилера BlackJack! Вы проиграли((((('); 
+                this.massege =  'Diler has BlackJack, You lose!!!!!!!!!!!!!';
                 const payload = {
                   id: this.id,
                   cash: this.cash
@@ -230,8 +231,7 @@ export default {
                 this.isDib = false;
                 this.dibs = [];      
                 this.showModal = true;
-                this.massege =  'You WIN!!!!!!!!!!!!!';        
-                // alert('Вы выграли!!!!!!!!!!!!!'); 
+                this.massege =  'You WIN!!!!!!!!!!!!!';
                 const payload = {
                   id: this.id,
                   cash: this.cash
@@ -249,8 +249,7 @@ export default {
                 this.isDib = false;
                 this.dibs = [];
                 this.showModal = true;
-                this.massege =  'Friendship WON!!!!!!!!!!!!!';               
-                // alert('Победила дружба!!!!!!!!!!!!!'); 
+                this.massege =  'Friendship WON!!!!!!!!!!!!!';
                 const payload = {
                   id: this.id,
                   cash: this.cash
@@ -267,8 +266,7 @@ export default {
                 this.isDib = false;
                 this.dibs = [];
                 this.showModal = true;
-                this.massege =  'You Lose!!!!!!!!!!!!!';     
-                // alert('Вы проиграли!!!!!!!');
+                this.massege =  'You Lose!!!!!!!!!!!!!'; 
                 const payload = {
                   id: this.id,
                   cash: this.cash

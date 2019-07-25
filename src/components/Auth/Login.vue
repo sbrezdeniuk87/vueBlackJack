@@ -16,8 +16,10 @@
             <input v-model="password" v-validate="'required|min:6'" name='password' type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             <span class="alert-danger" >{{ errors.first('password') }}</span>
           </div>
-          <button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'sign-in-alt']"/> Sing In</button>
-          <router-link :to="'/'"><button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'arrow-circle-left']"/> Back</button></router-link>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'sign-in-alt']"/> Sing In</button>
+            <router-link :to="'/'"><button type="submit" class="btn btn-primary"><font-awesome-icon  :icon="['fas', 'arrow-circle-left']"/> Back</button></router-link>
+          </div>
         </form>        
       </div>  
     </div>   
@@ -33,22 +35,23 @@ export default {
     }
   },
   methods:{
-    checkLogin(e){
-      this.$validator.validateAll().then((result) => {
-        if (result) {
-          const user = {
-              email: this.email,
-              password: this.password
-            }
-            this.$store.dispatch('loginUser', user)
-            .then(() => {
-              this.$router.push('/play')
-            })
-            .catch((err) => {console.log(err)})
-          return
+    async checkLogin(){
+      const valid = await this.$validator.errors.any();      
+      if(!valid){
+        const user = {
+          email: this.email,
+          password: this.password
         }
+        await this.$store.dispatch('loginUser', user);
+        
+        const checkUser = await this.$store.getters.getUser;
+        if(this.email === checkUser.email){
+          this.$router.push('/play');
+        }
+        return
+      }else{
         alert('Correct them errors!');
-      })      
+      }  
     }
   }
 }
